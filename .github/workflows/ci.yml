@@ -29,4 +29,4 @@ jobs:
 #         env:
 #           ENVENV1: ${{ secrets.ENVENV1 }}
 #           ENVENV2: ${{ secrets.ENVENV2 }}
-        run: docker compose run --rm python
+        run: docker compose run --rm python pytest -v tests/
