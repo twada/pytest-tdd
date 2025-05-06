@@ -31,3 +31,11 @@ $ docker compose run --rm python bash
 ```sh
 (dockerの中)$ exit
 ```
+
+
+UPDATE DEPS
+---------------------------------------
+
+```
+(dockerの中)$ pip-compile --extra dev -o deps-dev.lock pyproject.toml
+```

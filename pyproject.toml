@@ -1,0 +1,42 @@
+[project]
+name = "tdd"
+version = "0.1.0"
+dependencies = [
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+]
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.pip-tools.compile]
+annotation-style = "line"
+strip-extras = true
+# strip-extras = false
+
+[tool.pip-tools.sync]
+pip-args = "--root-user-action=ignore --no-cache-dir"
+
+[tool.pytest.ini_options]
+# テストコードは src ディレクトリと分けて tests ディレクトリに置く
+# tests ディレクトリから src 以下を import できるようにする
+pythonpath = "src"
+testpaths = "tests"
+
+# テストにつけるタグ
+markers = [
+  "wip: 現在仕掛かり中の作業のテスト",
+  "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+  "learning: marks tests as learning",
+  "smoke: subset of tests",
+  "small",
+  "medium",
+  "large",
+]
