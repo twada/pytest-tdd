@@ -4,11 +4,16 @@ tdd-python
 SETUP
 ---------------------------------------
 
-### イメージのビルドと動作確認
+### イメージのビルド
 
 ```sh
 $ docker compose build
-$ docker compose up
+```
+
+### 動作確認
+
+```sh
+$ docker compose run --rm python pytest
 ```
 
 TEST
@@ -36,6 +41,6 @@ $ docker compose run --rm python bash
 UPDATE DEPS
 ---------------------------------------
 
-```
+```sh
 (dockerの中)$ pip-compile --extra dev -o deps-dev.lock pyproject.toml
 ```
