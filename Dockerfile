@@ -1,4 +1,4 @@
-FROM python:3.13-slim
+FROM python:3.14.4-slim-trixie
 
 WORKDIR /pytest-tdd
 
@@ -10,8 +10,7 @@ ENV LANGUAGE=ja_JP:ja
 ENV LC_ALL=ja_JP.UTF-8
 ENV TZ=JST-9
 
-RUN pip install pip-tools
-COPY deps-dev.lock ./
-RUN pip-sync deps-dev.lock
+COPY requirements.txt ./
+RUN pip install --root-user-action=ignore --no-cache-dir -r requirements.txt
 
 COPY . ./

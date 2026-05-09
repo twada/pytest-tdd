@@ -1,12 +1,12 @@
 [project]
-name = "tdd"
+name = "pytest-tdd"
 version = "0.1.0"
 dependencies = [
 ]
 
 [project.optional-dependencies]
 dev = [
-  "pytest",
+  "pytest>=9.0.3",
 ]
 
 [build-system]
@@ -15,14 +15,6 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-
-[tool.pip-tools.compile]
-annotation-style = "line"
-strip-extras = true
-# strip-extras = false
-
-[tool.pip-tools.sync]
-pip-args = "--root-user-action=ignore --no-cache-dir"
 
 [tool.pytest.ini_options]
 # テストコードは src ディレクトリと分けて tests ディレクトリに置く
