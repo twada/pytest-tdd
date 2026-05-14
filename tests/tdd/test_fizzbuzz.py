@@ -1,5 +1,4 @@
-from tdd.fizzbuzz import FizzBuzz
+from tdd import fizzbuzz
 
 def test_1を渡したら文字列1を返す():
-    fizzbuzz = FizzBuzz()
     assert fizzbuzz.convert(1) == "1"

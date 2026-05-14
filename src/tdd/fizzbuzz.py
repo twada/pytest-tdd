@@ -1,3 +1,2 @@
-class FizzBuzz:
-    def convert(self, i):
-        return "1"
+def convert(i):
+    return "1"
