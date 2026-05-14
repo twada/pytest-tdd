@@ -1,5 +1,5 @@
 [project]
-name = "pytest-tdd"
+name = "tdd"
 version = "0.1.0"
 dependencies = [
 ]
